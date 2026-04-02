@@ -17,7 +17,7 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter& other) {
 }
 
 void	ScalarConverter::convert(std::string& literal) {
-
+	
 }
 
 bool	ScalarConverter::is_char(std::string& literal) {
