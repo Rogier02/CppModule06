@@ -1,6 +1,6 @@
 NAME		= conveter
 CC			= c++
-CFLAGS		= -Wall -Wextra -Werror -std=c++17
+CFLAGS		= -Wall -Wextra -Werror -std=c++17 -I ./inlcude
 
 SRCS		= main.cpp \
 				ScalarConvert.cpp
