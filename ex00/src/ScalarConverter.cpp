@@ -59,6 +59,11 @@ void	ScalarConverter::convert(std::string& literal) {
 			value = static_cast<double>(parsed);
 		}
 	}
+	else {
+		std::cout << "Error: invalid literal" << std::endl;
+		return;
+	}
+		
 	to_char(value);
 	to_int(value);
 	to_float(value);
@@ -130,7 +135,7 @@ void	ScalarConverter::to_int(double value) {
 		|| value > std::numeric_limits<int>::max())
 		std::cout << "Out of range" << std::endl;
 	else
-		std::cout << "int: " << static_cast<int>(value) << std::endl;
+		std::cout << static_cast<int>(value) << std::endl;
 }
 
 void	ScalarConverter::to_float(double value) {
@@ -149,9 +154,13 @@ void	ScalarConverter::to_float(double value) {
 }
 
 void	ScalarConverter::to_double(double value) {
-
-}
-
-void	ScalarConverter::pseudo_literals(double value) {
-
+	
+	if (std::isnan(value))
+		std::cout << "nan" << std::endl;
+	else if (std::isinf(value))
+		std::cout << (value < 0 ? "-inf" : "+inf") << std::endl;
+	else if (value == std::floor(value))
+			std::cout << value << ".0" << std::endl;
+	else
+			std::cout << value << std::endl;
 }

@@ -18,7 +18,5 @@ class ScalarConverter {
 		static void		to_int(double value);
 		static void		to_float(double value);
 		static void		to_double(double value);
-		static void		pseudo_literals(double value);
-
 };
 

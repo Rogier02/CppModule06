@@ -1,9 +1,9 @@
-NAME		= conveter
+NAME		= converter
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++17 -I ./include
 
 SRCS		= main.cpp \
-				ScalarConvert.cpp
+				src/ScalarConverter.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
@@ -16,7 +16,7 @@ $(NAME)		: $(OBJS)
 			$(CC) $(CFLAGS) -c $< -o $@
 
 clean		:
-			$(RM) $(NAME)
+			$(RM) $(OBJS)
 
 fclean		:clean
 			$(RM) $(NAME)
