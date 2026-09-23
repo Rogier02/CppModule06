@@ -14,11 +14,11 @@ class ScalarConverter {
 		static bool		is_int(std::string& literal);
 		static bool		is_float(std::string& literal);
 		static bool		is_double(std::string& literal);
-		static void		to_char(std::string& literal);
-		static void		to_int(std::string& literal);
-		static void		to_float(std::string& literal);
-		static void		to_double(std::string& literal);
-		static void		pseudo_literals(std::string& literal);
+		static void		to_char(double value);
+		static void		to_int(double value);
+		static void		to_float(double value);
+		static void		to_double(double value);
+		static void		pseudo_literals(double value);
 
 };
 
