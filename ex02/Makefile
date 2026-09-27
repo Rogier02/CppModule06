@@ -1,9 +1,10 @@
-NAME		= converter
+NAME		= identify
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++17 -I ./include
 
 SRCS		= src/main.cpp \
-				src/ScalarConverter.cpp
+				src/Base.cpp \
+				src/functions.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
@@ -18,9 +19,9 @@ $(NAME)		: $(OBJS)
 clean		:
 			$(RM) $(OBJS)
 
-fclean		:clean
+fclean		: clean
 			$(RM) $(NAME)
 
 re			: fclean all
 
-.PHONY		:all clean fclean re
+.PHONY		: all clean fclean re

@@ -1,0 +1,7 @@
+*.o
+
+ex00/converter
+ex01/serializer
+ex02/identify
+
+.DS_Store

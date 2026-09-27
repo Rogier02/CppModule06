@@ -10,6 +10,7 @@ ScalarConverter::ScalarConverter() {
 }
 
 ScalarConverter::ScalarConverter(const ScalarConverter& other) {
+	(void)other;
 	std::cout << "Scalar copy constructor called" << std::endl;
 }
 
@@ -18,6 +19,7 @@ ScalarConverter::~ScalarConverter() {
 }
 
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter& other) {
+	(void)other;
 	std::cout << "Scalar Assignment operator called" << std::endl;
 	return *this;
 }
@@ -81,17 +83,15 @@ bool	ScalarConverter::is_int(std::string& literal) {
 	if (literal.empty())
 		return false;		
 	char *end;
-	long val = std::strtol(literal.c_str(), &end, 10);
+	std::strtol(literal.c_str(), &end, 10);
 	if (*end != '\0')
-		return false;
-	if (val < INT_MIN || val > INT_MAX)
 		return false;
 	return true;
 }
 
 bool	ScalarConverter::is_float(std::string& literal) {
 	char *end;
-	float val = std::strtof(literal.c_str(), &end);
+	std::strtof(literal.c_str(), &end);
 
 	// nothing was parsed at all
 	if (end == literal.c_str())
@@ -108,7 +108,7 @@ bool	ScalarConverter::is_double(std::string& literal) {
 		return true;
 	
 	char *end;
-	double val = std::strtod(literal.c_str(), &end);
+	std::strtod(literal.c_str(), &end);
 
 	if (literal.find('.') == std::string::npos || end == literal.c_str())
 		return false;
